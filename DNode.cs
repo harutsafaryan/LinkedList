@@ -70,21 +70,21 @@ namespace LinkedList
             }
         }
 
-        public void ReverseLinkedList()
-        {
-            Node<T> prevNode = null;
-            Node<T> current = Head;
-            Node<T> temp = null;
+        //public void ReverseLinkedList()
+        //{
+        //    Node<T> prevNode = null;
+        //    Node<T> current = Head;
+        //    Node<T> temp = null;
 
-            while (current != null)
-            {
-                temp = current.Next;
-                current.Next = prevNode;
-                prevNode = current;
-                current = temp;
-            }
-            Head = prevNode;
-        }
+        //    while (current != null)
+        //    {
+        //        temp = current.Next;
+        //        current.Next = prevNode;
+        //        prevNode = current;
+        //        current = temp;
+        //    }
+        //    Head = prevNode;
+        //}
 
         private DNode<T> GetLastNode()
         {
