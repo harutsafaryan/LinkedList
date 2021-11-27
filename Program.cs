@@ -15,7 +15,6 @@ namespace LinkedList
             doubleLinkedList.InsertFront(6);
             doubleLinkedList.InsertFront(7);
 
-
             DoubleLinkedList<int> doubleLinkedList1 = new DoubleLinkedList<int>();
             doubleLinkedList1.InsertLast(1);
             doubleLinkedList1.InsertLast(2);
@@ -24,6 +23,8 @@ namespace LinkedList
             doubleLinkedList1.InsertLast(5);
             doubleLinkedList1.InsertLast(6);
             doubleLinkedList1.InsertLast(7);
+            doubleLinkedList1.DeleteNodebyKey(4);
+            doubleLinkedList1.ReverseLinkedList();
             doubleLinkedList1.InsertAfter(doubleLinkedList1.Head.Next.Next, 20);
 
             SingleLinkedList<int> singleLinked = new SingleLinkedList<int>();
@@ -32,6 +33,7 @@ namespace LinkedList
             singleLinked.InsertFront(3);
             singleLinked.InsertFront(4);
             singleLinked.InsertFront(5);
+            singleLinked.DeleteNodebyKey(4);
 
             SingleLinkedList<int> singleLinked1 = new SingleLinkedList<int>();
             singleLinked1.InsertLast(1);
@@ -40,7 +42,7 @@ namespace LinkedList
             singleLinked1.InsertLast(4);
             singleLinked1.InsertLast(5);
             singleLinked1.ReverseLinkedList();
-            //singleLinked.InsertAfter(singleLinked1.Head.Next.Next, 20);
+            singleLinked.InsertAfter(singleLinked1.Head.Next.Next, 20);
             Console.WriteLine();
         }
     }

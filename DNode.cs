@@ -70,22 +70,45 @@ namespace LinkedList
             }
         }
 
-        //public void ReverseLinkedList()
-        //{
-        //    Node<T> prevNode = null;
-        //    Node<T> current = Head;
-        //    Node<T> temp = null;
+        public void ReverseLinkedList()
+        {
+            DNode<T> prevNode = null;
+            DNode<T> current = Head;
+            DNode<T> temp = null;
 
-        //    while (current != null)
-        //    {
-        //        temp = current.Next;
-        //        current.Next = prevNode;
-        //        prevNode = current;
-        //        current = temp;
-        //    }
-        //    Head = prevNode;
-        //}
+            while (current != null)
+            {
+                temp = current.Next;
+                current.Next = prevNode;
+                current.Prev = temp;
+                prevNode = current;
+                current = temp;
+            }
+            Head = prevNode;
+        }
 
+        public void DeleteNodebyKey(T key)
+        {
+            DNode<T> temp = Head;
+            DNode<T> prevNode = null;
+            if (temp != null && temp.Data.Equals(key))
+            {
+                Head = temp.Next;
+                return;
+            }
+            while (temp != null && !temp.Data.Equals(key))
+            {
+                prevNode = temp;
+                temp = temp.Next;
+                temp.Prev = prevNode;
+            }
+            if (temp == null)
+            {
+                return;
+            }
+            prevNode.Next = temp.Next;
+            temp.Next.Prev = prevNode;
+        }
         private DNode<T> GetLastNode()
         {
             if (Head == null)

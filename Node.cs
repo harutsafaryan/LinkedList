@@ -74,6 +74,26 @@ namespace LinkedList
             Head = prevNode;
         }
 
+        public  void DeleteNodebyKey(T key)
+        {
+            Node<T> temp = Head;
+            Node<T> prevNode = null;
+            if (temp != null && temp.Data.Equals(key))
+            {
+                Head = temp.Next;
+                return;
+            }
+            while (temp != null && !temp.Data.Equals(key))
+            {
+                prevNode = temp;
+                temp = temp.Next;
+            }
+            if (temp == null)
+            {
+                return;
+            }
+            prevNode.Next = temp.Next;
+        }
         private Node<T> GetLastNode()
         {
             if (Head == null)
